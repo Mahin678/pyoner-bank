@@ -6,12 +6,12 @@ h1{
     margin-top: 10%;
     margin-bottom: 50px;
 }
-form{
+.contact-wrapper{
     padding: 50px;
     margin: 0 auto;
     width: 75%;
 }
-form   input {
+.contact-wrapper   input {
     display: block  ;
     width: 100%;
     padding: 8px;

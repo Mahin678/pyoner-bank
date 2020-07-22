@@ -10,16 +10,16 @@
 <body class="container" >
     <div id="main-wrapper" >
         <h1 class="text-center" >Welcome Black Heat Bank </h1>
-        <form action="#" class="shadow-lg" >
+        <div  class="shadow-lg contact-wrapper " >
           
             <h4>Login</h4>
             <input type="email" placeholder="Write your user name "  class="d-block "  >
     
     
-                <input type="password" placeholder="Write your password "  class="d-block  mt-5"   >
-                <button id="bTn" class="btn btn-success mt-3" >submit</button>
+                <input type="password" placeholder="Write your password"  class="d-block  mt-5"   >
+                <button id="bTns" class="btn btn-success mt-3" >submit</button>
      
-        </form>
+        </div>
     </div>
     <div id="transactionArea"  > 
         <div class="swap-wrapper d-flex  d-flex m-5 justify-content-between">
@@ -56,12 +56,11 @@
         </div>
      </div>
     <script>
-         const checkBtn = document.getElementById('bTn')
-         checkBtn.addEventListener('click',function(){
-             const hides = document.getElementById('main-wrapper');
-             hides.style.display='none';
-             var tArea = document.getElementById('transactionArea');
-             tArea.style.display='block';
+               const btnCheck =  document.getElementById("bTns");btnCheck.addEventListener("click", function(){
+             const hides = document.getElementById("main-wrapper");
+             hides.style.display="none";
+             const tArea = document.getElementById("transactionArea");
+             tArea.style.display="block";
         })
     </script>
 </body>
