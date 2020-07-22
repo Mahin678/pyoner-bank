@@ -39,14 +39,14 @@
         <div class="command">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="diposied-c shadow">
+                    <div class="diopside-c shadow">
                         <h4>deposit</h4>
                         <input type="number" placeholder="$ amount  want to you deposit "  >
                         <button class="btn btn-success d-block mt-3 " >deposit</button>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="diposied-c shadow">
+                    <div class="diopside-c shadow">
                         <h4 class="" >withdraw</h4>
                         <input type="number" placeholder="$ amount  want to you withdraw "  >
                         <button class="btn btn-success d-block mt-3" >withdraw</button>
@@ -56,7 +56,8 @@
         </div>
      </div>
     <script>
-         document.getElementById('bTn').addEventListener('click',function(){
+         const checkBtn = document.getElementById('bTn')
+         checkBtn.addEventListener('click',function(){
              const hides = document.getElementById('main-wrapper');
              hides.style.display='none';
              var tArea = document.getElementById('transactionArea');
