@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>My-Bank</title>
 </head>
 <body class="container" >
     <div id="main-wrapper" >
@@ -13,7 +13,7 @@
         <div  class="shadow-lg contact-wrapper " >
           
             <h4>Login</h4>
-            <input type="email" placeholder="Write your user name "  class="d-block "  >
+            <input  type="email" placeholder="Write your user name "  class="d-block "  >
     
     
                 <input type="password" placeholder="Write your password"  class="d-block  mt-5"   >
@@ -25,15 +25,15 @@
         <div class="swap-wrapper d-flex  d-flex m-5 justify-content-between">
             <div class="deposit"> 
                 <h4>deposit</h4>
-                <h2>$ 1299</h2>
+                <h2>$ <span id="currentDeposit" >00</span> </h2>
             </div>
             <div class="withdraw">
                 <h4>withdraw</h4>
-                <h2>$ 00</h2>
+                <h2>$  <span id="currentWithdraw"> 00 </span> </h2>
             </div>
             <div class="balance">
                 <h4>balance</h4>
-                <h2>$ 00</h2>
+                <h2>$  <span id="currentBalance" >00</span> </h2>
             </div>
         </div>
         <div class="command">
@@ -41,27 +41,85 @@
                 <div class="col-lg-6">
                     <div class="diopside-c shadow">
                         <h4>deposit</h4>
-                        <input type="number" placeholder="$ amount  want to you deposit "  >
-                        <button class="btn btn-success d-block mt-3 " >deposit</button>
+                        <input id="inputDeposit" type="number" placeholder="$ amount  want to you deposit "  >
+                        <button id="depositBtn" class="btn btn-success d-block mt-3 " >deposit</button>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="diopside-c shadow">
                         <h4 class="" >withdraw</h4>
-                        <input type="number" placeholder="$ amount  want to you withdraw "  >
-                        <button class="btn btn-success d-block mt-3" >withdraw</button>
+                        <input id="inputWithdraw" type="number" placeholder="$ amount  want to you withdraw "  >
+                        <button  id="withdrawsBtn" class="btn btn-success d-block mt-3" >withdraw</button>
                     </div>
                 </div>
             </div>
         </div>
      </div>
     <script>
+        //login button even handler 
                const btnCheck =  document.getElementById("bTns");btnCheck.addEventListener("click", function(){
              const hides = document.getElementById("main-wrapper");
              hides.style.display="none";
              const tArea = document.getElementById("transactionArea");
              tArea.style.display="block";
         })
+        // deposit  btn even handler 
+        const deposits = document.getElementById("depositBtn");
+        deposits.addEventListener("click", function(){
+
+        const totalDeposited = getInputNumber("inputDeposit");
+        
+        addBalanced("currentDeposit" , totalDeposited );
+        addBalanced("currentBalance" , totalDeposited );
+        
+        document.getElementById("inputDeposit").value=" ";
+        })
+        // withdraw   btn even handler 
+
+        const addWithdraw  = document.getElementById("withdrawsBtn");
+        addWithdraw.addEventListener("click", function(){
+        const withdrawValue =  getInputNumber("inputWithdraw");
+            addBalanced("currentWithdraw" , withdrawValue );
+            addBalanced("currentBalance" ,-1* withdrawValue );
+
+        document.getElementById("inputWithdraw").value=" ";
+
+        })
+    
+        // get input number 
+        function getInputNumber(id){
+        const amountValue =  document.getElementById(id).value;
+        const amountTotal = parseFloat(amountValue);
+        return amountTotal;
+
+        } 
+
+        function addBalanced(id , totalDeposited ){
+        const addBalance = document.getElementById(id).innerText;
+        const addb = parseFloat(addBalance);
+        const final = addb + totalDeposited;
+        document.getElementById(id).innerText = final;
+        }
+
+ 
+        // function addsBalanced(id , totalWithdraw ){
+        // const addBalance = document.getElementById(id).innerText;
+        // const addb = parseFloat(addBalance);
+        // const final = addb + totalWithdraw;
+        // document.getElementById(id).innerText = final;
+        // }
+        // balance add button 
+        // const addBalance = document.getElementById("depositBtn");
+        // addBalance.addEventListener("click",function(){
+        //     const balanceAmount =  document.getElementById("inputDeposit").value;
+        //     const  balanceAmount = parseFloat(balanceAmount);
+        //     const currentBalance = document.getElementById("inputBalance").innerText;
+        //     const   currentBalance  =  parseFloat(currentBalance);
+        //     const totalAmount = balanceAmount + currentBalance;
+        //     console.log(addBalance);
+        // })
+      //  const addBalance =document.getElementById("inputBalance").innerText;
+
     </script>
 </body>
 </html>
