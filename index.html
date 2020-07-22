@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="container" >
+    <div id="main-wrapper" >
+        <h1 class="text-center" >Welcome Black Heat Bank </h1>
+        <form action="#" class="shadow-lg" >
+          
+            <h4>Login</h4>
+            <input type="email" placeholder="Write your user name "  class="d-block "  >
+    
+    
+                <input type="password" placeholder="Write your password "  class="d-block  mt-5"   >
+                <button id="bTn" class="btn btn-success mt-3" >submit</button>
+     
+        </form>
+    </div>
+    <div id="transactionArea"  > 
+        <div class="swap-wrapper d-flex  d-flex m-5 justify-content-between">
+            <div class="deposit"> 
+                <h4>deposit</h4>
+                <h2>$ 1299</h2>
+            </div>
+            <div class="withdraw">
+                <h4>withdraw</h4>
+                <h2>$ 00</h2>
+            </div>
+            <div class="balance">
+                <h4>balance</h4>
+                <h2>$ 00</h2>
+            </div>
+        </div>
+        <div class="command">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="diposied-c shadow">
+                        <h4>deposit</h4>
+                        <input type="number" placeholder="$ amount  want to you deposit "  >
+                        <button class="btn btn-success d-block mt-3 " >deposit</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="diposied-c shadow">
+                        <h4 class="" >withdraw</h4>
+                        <input type="number" placeholder="$ amount  want to you withdraw "  >
+                        <button class="btn btn-success d-block mt-3" >withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <script>
+         document.getElementById('bTn').addEventListener('click',function(){
+             const hides = document.getElementById('main-wrapper');
+             hides.style.display='none';
+             var tArea = document.getElementById('transactionArea');
+             tArea.style.display='block';
+        })
+    </script>
+</body>
+</html>
